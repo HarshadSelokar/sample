@@ -27,12 +27,12 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", () => {
     const navbar = document.querySelector(".navbar")
     if (window.scrollY > 50) {
-      navbar.style.padding = "10px 0"
-      navbar.style.backgroundColor = "rgba(255, 255, 255, 0.98)"
+navbar.style.padding = "10px 0"
+      navbar.style.backgroundColor = "rgba(45, 55, 72, 0.95)"
       navbar.style.boxShadow = "0 2px 10px rgba(0, 0, 0, 0.1)"
     } else {
       navbar.style.padding = "15px 0"
-      navbar.style.backgroundColor = "rgba(255, 255, 255, 0.95)"
+      navbar.style.backgroundColor = "rgba(45, 55, 72, 0.9)"
       navbar.style.boxShadow = "0 2px 10px rgba(0, 0, 0, 0.1)"
     }
   })
