@@ -1,0 +1,6 @@
+<svg width="200" height="50" viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M30 10L10 40H20L40 10H30Z" fill="#6C63FF"/>
+  <path d="M45 10L25 40H35L55 10H45Z" fill="#5A52D9"/>
+  <text x="65" y="32" font-family="Poppins, sans-serif" font-size="24" font-weight="700" fill="#2D3748">Vector Labs</text>
+</svg>
+

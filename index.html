@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vector Labs - Empower Your Learning Journey</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loader -->
+    <div class="loader-container">
+        <div class="loader">
+            <div class="logo-container">
+                <img src="images/vector-logo.png" alt="Vector Logo" class="logo-img">
+            </div>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+            <div class="loading-text">Loading Experience...</div>
+        </div>
+    </div>
+
+    <!-- Three.js Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/vector-logo.png" alt="Vector Labs Logo">
+                </a>
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#" class="btn btn-primary">Get Started</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="headline">Empower Your Learning Journey with Smart Solutions</h1>
+                <p class="subheadline">Personalized learning, effective goal-setting, gamified progress, and seamless study load management—all in one platform.</p>
+                <div class="hero-cta">
+                    <a href="#" class="btn btn-primary">Start Free Trial</a>
+                    <a href="#features" class="btn btn-secondary">Explore Features</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div id="hero-3d-container"></div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <div class="arrow">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="intro">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="glitch-text" data-text="Transform Your Learning Experience">Transform Your Learning Experience</h2>
+                <p>Say goodbye to disorganized study routines and hello to a smarter way to learn.</p>
+            </div>
+            <div class="stats-container">
+                <div class="stat-item" data-value="10000">
+                    <div class="stat-visual">
+                        <canvas class="stat-canvas"></canvas>
+                    </div>
+                    <span class="stat-number">0</span>
+                    <span class="stat-text">Active Students</span>
+                </div>
+                <div class="stat-item" data-value="95">
+                    <div class="stat-visual">
+                        <canvas class="stat-canvas"></canvas>
+                    </div>
+                    <span class="stat-number">0</span>
+                    <span class="stat-text">Success Rate</span>
+                </div>
+                <div class="stat-item" data-value="24">
+                    <div class="stat-visual">
+                        <canvas class="stat-canvas"></canvas>
+                    </div>
+                    <span class="stat-number">0</span>
+                    <span class="stat-text">Learning Support</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Overview -->
+    <section id="features" class="features-overview">
+        <div class="container">
+            <div class="section-header">
+                <h2>Features That Transform Your Learning Experience</h2>
+                <p>Our platform combines cutting-edge technology with proven learning methodologies to help you achieve your academic goals.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>Personalized Learning</h3>
+                    <p>Tailor your learning experience with adaptive plans designed just for you.</p>
+                    <div class="feature-hover">
+                        <div class="feature-particles"></div>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Goal Achievement</h3>
+                    <p>Set, track, and smash your academic goals with ease.</p>
+                    <div class="feature-hover">
+                        <div class="feature-particles"></div>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>Study Load Management</h3>
+                    <p>Balance your workload with intuitive task scheduling and reminders.</p>
+                    <div class="feature-hover">
+                        <div class="feature-particles"></div>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Gamification</h3>
+                    <p>Stay motivated with badges, leaderboards, and rewards.</p>
+                    <div class="feature-hover">
+                        <div class="feature-particles"></div>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>Daily Study & Task Management</h3>
+                    <p>Streamline your day-to-day tasks for maximum productivity.</p>
+                    <div class="feature-hover">
+                        <div class="feature-particles"></div>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Collaborative Learning</h3>
+                    <p>Learn and grow with peers, mentors, and supportive communities.</p>
+                    <div class="feature-hover">
+                        <div class="feature-particles"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="features-cta">
+                <a href="features.html" class="btn btn-secondary">View All Features</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Demo Section -->
+    <section class="interactive-demo">
+        <div class="container">
+            <div class="section-header">
+                <h2>Experience Vector Labs in Action</h2>
+                <p>Interact with our platform and see how it transforms your learning journey</p>
+            </div>
+            <div class="demo-container">
+                <div class="demo-visual">
+                    <div id="demo-3d-container"></div>
+                </div>
+                <div class="demo-controls">
+                    <div class="demo-control active" data-demo="personalized">
+                        <div class="control-icon"><i class="fas fa-user-graduate"></i></div>
+                        <h3>Personalized Learning</h3>
+                    </div>
+                    <div class="demo-control" data-demo="goals">
+                        <div class="control-icon"><i class="fas fa-bullseye"></i></div>
+                        <h3>Goal Achievement</h3>
+                    </div>
+                    <div class="demo-control" data-demo="gamification">
+                        <div class="control-icon"><i class="fas fa-trophy"></i></div>
+                        <h3>Gamification</h3>
+                    </div>
+                    <div class="demo-control" data-demo="management">
+                        <div class="control-icon"><i class="fas fa-tasks"></i></div>
+                        <h3>Study Management</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How Vector Labs Works</h2>
+                <p>Our platform makes learning efficient, engaging, and effective in just a few simple steps.</p>
+            </div>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Create Your Profile</h3>
+                        <p>Tell us about your learning style, goals, and preferences.</p>
+                    </div>
+                    <div class="step-visual">
+                        <canvas class="step-canvas"></canvas>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Set Your Goals</h3>
+                        <p>Define what you want to achieve with our SMART goal framework.</p>
+                    </div>
+                    <div class="step-visual">
+                        <canvas class="step-canvas"></canvas>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Follow Your Plan</h3>
+                        <p>Use your personalized study plan and track your progress.</p>
+                    </div>
+                    <div class="step-visual">
+                        <canvas class="step-canvas"></canvas>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Celebrate Success</h3>
+                        <p>Earn rewards, unlock achievements, and reach your full potential.</p>
+                    </div>
+                    <div class="step-visual">
+                        <canvas class="step-canvas"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Students Say</h2>
+                <p>Join thousands of students who have transformed their learning experience with Vector Labs.</p>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial-slide active">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Vector Labs completely transformed my study habits. The personalized learning plan and gamification features keep me motivated every day. I've improved my grades significantly!"</p>
+                        <div class="testimonial-author">
+                            <img src="images/testimonial-1.jpg" alt="Sarah J.">
+                            <div>
+                                <h4>Sarah J.</h4>
+                                <p>Computer Science Student</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"As a medical student with a heavy workload, Vector Labs has been a lifesaver. The study load management features help me stay organized and reduce stress. Highly recommend!"</p>
+                        <div class="testimonial-author">
+                            <img src="images/testimonial-2.jpg" alt="Michael T.">
+                            <div>
+                                <h4>Michael T.</h4>
+                                <p>Medical Student</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p>"The goal-setting features in Vector Labs helped me break down my big academic goals into manageable steps. I'm now more productive and confident in my abilities!"</p>
+                        <div class="testimonial-author">
+                            <img src="images/testimonial-3.jpg" alt="Emma L.">
+                            <div>
+                                <h4>Emma L.</h4>
+                                <p>Business Administration Student</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-controls">
+                <button class="testimonial-prev"><i class="fas fa-chevron-left"></i></button>
+                <div class="testimonial-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <button class="testimonial-next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Join thousands of students achieving their academic dreams!</h2>
+                <p>Start your journey to academic success today with Vector Labs.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary">Start Free Trial</a>
+                    <a href="contact.html" class="btn btn-outline">Contact Us</a>
+                </div>
+            </div>
+        </div>
+        <div id="cta-particles"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <img src="images/vector-logo-white.png" alt="Vector Labs Logo" class="footer-logo">
+                    <p>Empowering students worldwide with smart learning solutions that transform education.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Features</h3>
+                    <ul>
+                        <li><a href="features.html#personalized">Personalized Learning</a></li>
+                        <li><a href="features.html#goals">Goal Achievement</a></li>
+                        <li><a href="features.html#management">Study Load Management</a></li>
+                        <li><a href="features.html#gamification">Gamification</a></li>
+                        <li><a href="features.html#collaboration">Collaborative Learning</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> support@vectorlabs.com</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Education Ave, Learning City, LC 12345</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Vector Labs. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/TextPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="js/three-setup.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+

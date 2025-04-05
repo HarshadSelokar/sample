@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog - Vector Labs</title>
+    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+      <div class="container">
+          <div class="logo">
+              <a href="index.html">
+                  <img src="images/vector-main-logo.png" alt="Vector Labs Logo">
+              </a>
+          </div>
+          <div class="nav-toggle">
+              <span></span>
+              <span></span>
+              <span></span>
+          </div>
+          <ul class="nav-menu">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="features.html">Features</a></li>
+              <li><a href="blog.html" class="active">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="#" class="btn btn-primary">Login</a></li>
+          </ul>
+      </div>
+  </nav>
+
+  <!-- Blog Hero Section -->
+  <section class="blog-hero">
+      <div class="container">
+          <div class="blog-hero-content">
+              <span class="hero-subtitle">Our Insights</span>
+              <h1>Vector Labs Blog</h1>
+              <p>Discover the latest trends, tips, and strategies to enhance your learning journey</p>
+          </div>
+          <div class="blog-hero-visual">
+              <div class="hero-shape shape-1"></div>
+              <div class="hero-shape shape-2"></div>
+              <div class="hero-shape shape-3"></div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Blog Categories Nav -->
+  <!-- <div class="blog-categories">
+      <div class="container">
+          <div class="categories-nav">
+              <a href="#" class="active">All Posts</a>
+              <a href="#">Learning Strategies</a>
+              <a href="#">Productivity</a>
+              <a href="#">AI in Education</a>
+              <a href="#">Student Success</a>
+              <a href="#">Gamification</a>
+          </div>
+      </div>
+  </div> -->
+
+  <!-- Blog Content -->
+  <section class="blog-content">
+      <div class="container">
+          <div class="blog-grid">
+              <!-- Main Content -->
+              <div class="blog-main">
+                  <!-- Featured Post -->
+                  <article class="featured-post">
+                      <div class="post-image">
+                          <img src="images/gamify.jpg" alt="Featured Post">
+                          <div class="post-category">
+                              <span>Learning Strategies</span>
+                          </div>
+                      </div>
+                      <div class="post-content">
+                          <div class="post-meta">
+                              <span class="post-date"><i class="far fa-calendar-alt"></i> April 2, 2025</span>
+                              <span class="post-author"><i class="far fa-user"></i> Sarah Johnson</span>
+                              <span class="post-comments"><i class="far fa-comment"></i> 24 Comments</span>
+                              <span class="post-read-time"><i class="far fa-clock"></i> 8 min read</span>
+                          </div>
+                          <h2 class="post-title">
+                              <a href="#">How Gamification Transforms the Learning Experience</a>
+                          </h2>
+                          <div class="post-excerpt">
+                              <p>Discover how gamification elements like points, badges, and leaderboards can significantly increase student engagement and motivation. Our research shows that students using gamified learning platforms are 68% more likely to complete their courses and report higher satisfaction rates.</p>
+                          </div>
+                          <div class="post-footer">
+                              <a href="#" class="read-more">Continue Reading <i class="fas fa-arrow-right"></i></a>
+                              <div class="post-tags">
+                                  <a href="#">#gamification</a>
+                                  <a href="#">#learning</a>
+                                  <a href="#">#motivation</a>
+                              </div>
+                          </div>
+                      </div>
+                  </article>
+
+                  <!-- Post Grid -->
+                  <div class="post-grid">
+                      <article class="blog-post">
+                          <div class="post-image">
+                              <img src="images/effective_study.png" alt="Blog Post">
+                              <div class="post-category">
+                                  <span>Productivity</span>
+                              </div>
+                          </div>
+                          <div class="post-content">
+                              <div class="post-meta">
+                                  <span class="post-date"><i class="far fa-calendar-alt"></i> March 28, 2025</span>
+                                  <span class="post-read-time"><i class="far fa-clock"></i> 5 min read</span>
+                              </div>
+                              <h2 class="post-title">
+                                  <a href="#">5 Effective Study Load Management Techniques</a>
+                              </h2>
+                              <div class="post-excerpt">
+                                  <p>Managing your study load effectively is crucial for academic success. Learn five proven techniques that can help you balance your workload and reduce stress while improving your learning outcomes.</p>
+                              </div>
+                              <a href="#" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                          </div>
+                      </article>
+
+                      <article class="blog-post">
+                          <div class="post-image">
+                              <img src="images/future-ai.jpg" alt="Blog Post">
+                              <div class="post-category">
+                                  <span>AI in Education</span>
+                              </div>
+                          </div>
+                          <div class="post-content">
+                              <div class="post-meta">
+                                  <span class="post-date"><i class="far fa-calendar-alt"></i> March 21, 2025</span>
+                                  <span class="post-read-time"><i class="far fa-clock"></i> 7 min read</span>
+                              </div>
+                              <h2 class="post-title">
+                                  <a href="#">The Future of Personalized Learning with AI</a>
+                              </h2>
+                              <div class="post-excerpt">
+                                  <p>Artificial Intelligence is revolutionizing education by creating truly personalized learning experiences. Explore how AI algorithms analyze learning patterns to create custom study plans tailored to individual needs.</p>
+                              </div>
+                              <a href="#" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                          </div>
+                      </article>
+
+                      <article class="blog-post">
+                          <div class="post-image">
+                              <img src="images/smart-goal.jpg" alt="Blog Post">
+                              <div class="post-category">
+                                  <span>Goal Setting</span>
+                              </div>
+                          </div>
+                          <div class="post-content">
+                              <div class="post-meta">
+                                  <span class="post-date"><i class="far fa-calendar-alt"></i> March 15, 2025</span>
+                                  <span class="post-read-time"><i class="far fa-clock"></i> 6 min read</span>
+                              </div>
+                              <h2 class="post-title">
+                                  <a href="#">SMART Goals: The Key to Academic Achievement</a>
+                              </h2>
+                              <div class="post-excerpt">
+                                  <p>Setting SMART (Specific, Measurable, Achievable, Relevant, Time-bound) goals is essential for academic success. This article breaks down the process and provides practical examples for students.</p>
+                              </div>
+                              <a href="#" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                          </div>
+                      </article>
+
+                      <article class="blog-post">
+                          <div class="post-image">
+                              <img src="images/collab.jpg" alt="Blog Post">
+                              <div class="post-category">
+                                  <span>Student Success</span>
+                              </div>
+                          </div>
+                          <div class="post-content">
+                              <div class="post-meta">
+                                  <span class="post-date"><i class="far fa-calendar-alt"></i> March 8, 2025</span>
+                                  <span class="post-read-time"><i class="far fa-clock"></i> 4 min read</span>
+                              </div>
+                              <h2 class="post-title">
+                                  <a href="#">How Collaborative Learning Enhances Understanding</a>
+                              </h2>
+                              <div class="post-excerpt">
+                                  <p>Collaborative learning environments can significantly improve comprehension and retention. Discover how peer-to-peer interaction creates deeper understanding and builds essential soft skills.</p>
+                              </div>
+                              <a href="#" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                          </div>
+                      </article>
+                  </div>
+
+                  <!-- Load More Button -->
+                  <div class="load-more">
+                      <button class="btn btn-outline load-more-btn">
+                          <span>Load More Articles</span>
+                          <i class="fas fa-spinner"></i>
+                      </button>
+                  </div>
+              </div>
+
+              <!-- Sidebar -->
+              <div class="blog-sidebar">
+                  <!-- Search -->
+                  <div class="sidebar-widget search-widget">
+                      <form class="search-form">
+                          <input type="text" placeholder="Search articles...">
+                          <button type="submit"><i class="fas fa-search"></i></button>
+                      </form>
+                  </div>
+
+                  <!-- About Blog -->
+                  <div class="sidebar-widget about-widget">
+                      <h3 class="widget-title">About Our Blog</h3>
+                      <p>The Vector Labs blog is dedicated to sharing insights, strategies, and the latest research in education technology and learning methodologies.</p>
+                      <a href="about.html" class="btn btn-outline btn-sm">Learn More</a>
+                  </div>
+
+                  <!-- Popular Posts -->
+                  <div class="sidebar-widget popular-posts-widget">
+                      <h3 class="widget-title">Popular Posts</h3>
+                      <div class="popular-posts">
+                          <div class="popular-post">
+                              <div class="popular-post-image">
+                                  <img src="images/blog-popular-1.jpg" alt="Popular Post">
+                              </div>
+                              <div class="popular-post-content">
+                                  <h4><a href="#">The Science of Effective Note-Taking</a></h4>
+                                  <div class="post-meta">
+                                      <span class="post-date"><i class="far fa-calendar-alt"></i> March 5, 2025</span>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="popular-post">
+                              <div class="popular-post-image">
+                                  <img src="images/blog-popular-2.jpg" alt="Popular Post">
+                              </div>
+                              <div class="popular-post-content">
+                                  <h4><a href="#">Memory Techniques for Exam Preparation</a></h4>
+                                  <div class="post-meta">
+                                      <span class="post-date"><i class="far fa-calendar-alt"></i> February 28, 2025</span>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="popular-post">
+                              <div class="popular-post-image">
+                                  <img src="images/blog-popular-3.jpg" alt="Popular Post">
+                              </div>
+                              <div class="popular-post-content">
+                                  <h4><a href="#">Digital Tools Every Student Needs</a></h4>
+                                  <div class="post-meta">
+                                      <span class="post-date"><i class="far fa-calendar-alt"></i> February 20, 2025</span>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+                  <!-- Categories -->
+                  <div class="sidebar-widget categories-widget">
+                      <h3 class="widget-title">Categories</h3>
+                      <ul class="categories-list">
+                          <li>
+                              <a href="#">
+                                  <span class="category-name">Learning Strategies</span>
+                                  <span class="category-count">12</span>
+                              </a>
+                          </li>
+                          <li>
+                              <a href="#">
+                                  <span class="category-name">Productivity</span>
+                                  <span class="category-count">8</span>
+                              </a>
+                          </li>
+                          <li>
+                              <a href="#">
+                                  <span class="category-name">AI in Education</span>
+                                  <span class="category-count">6</span>
+                              </a>
+                          </li>
+                          <li>
+                              <a href="#">
+                                  <span class="category-name">Goal Setting</span>
+                                  <span class="category-count">9</span>
+                              </a>
+                          </li>
+                          <li>
+                              <a href="#">
+                                  <span class="category-name">Student Success</span>
+                                  <span class="category-count">15</span>
+                              </a>
+                          </li>
+                          <li>
+                              <a href="#">
+                                  <span class="category-name">Gamification</span>
+                                  <span class="category-count">7</span>
+                              </a>
+                          </li>
+                      </ul>
+                  </div>
+
+                  <!-- Tags -->
+                  <div class="sidebar-widget tags-widget">
+                      <h3 class="widget-title">Popular Tags</h3>
+                      <div class="tags-list">
+                          <a href="#">Learning</a>
+                          <a href="#">Education</a>
+                          <a href="#">AI</a>
+                          <a href="#">Productivity</a>
+                          <a href="#">Study Tips</a>
+                          <a href="#">Technology</a>
+                          <a href="#">Goals</a>
+                          <a href="#">Success</a>
+                          <a href="#">Motivation</a>
+                      </div>
+                  </div>
+
+                  <!-- Newsletter -->
+                  <div class="sidebar-widget newsletter-widget">
+                      <h3 class="widget-title">Newsletter</h3>
+                      <p>Subscribe to our newsletter to get the latest updates directly in your inbox.</p>
+                      <form class="newsletter-form">
+                          <input type="email" placeholder="Your email address">
+                          <button type="submit" class="btn btn-primary">Subscribe</button>
+                      </form>
+                  </div>
+
+                  <!-- Author Spotlight -->
+                  <div class="sidebar-widget author-widget">
+                      <h3 class="widget-title">Author Spotlight</h3>
+                      <div class="author-spotlight">
+                          <div class="author-image">
+                              <img src="images/profile-logo.png" alt="Author Spotlight">
+                          </div>
+                          <h4>Dr. Maya Patel</h4>
+                          <p class="author-role">Chief Learning Officer</p>
+                          <p class="author-bio">Dr. Patel specializes in cognitive science and educational technology, with over 15 years of experience in developing innovative learning methodologies.</p>
+                          <div class="author-social">
+                              <a href="#"><i class="fab fa-twitter"></i></a>
+                              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Subscribe Section -->
+  <!-- <section class="subscribe-section">
+      <div class="container">
+          <div class="subscribe-content">
+              <div class="subscribe-text">
+                  <h2>Stay Updated with Vector Labs</h2>
+                  <p>Get the latest articles, tips, and insights delivered straight to your inbox.</p>
+              </div>
+              <form class="subscribe-form">
+                  <div class="form-group">
+                      <input type="email" placeholder="Enter your email address">
+                      <button type="submit" class="btn btn-primary">Subscribe</button>
+                  </div>
+                  <div class="form-consent">
+                      <label>
+                          <input type="checkbox">
+                          <span>I agree to receive emails from Vector Labs and can unsubscribe at any time.</span>
+                      </label>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </section> -->
+
+  <!-- Footer -->
+  <footer class="footer">
+      <div class="container">
+          <div class="footer-grid">
+              <div class="footer-about">
+                  <img src="images/vector-main.jpg" alt="Vector Labs Logo" class="footer-logo">
+                  <p style="text-align: center;">Empowering students worldwide with smart learning solutions that transform education.</p>
+                  <div class="social-icons">
+                      <a href="#"><i class="fab fa-facebook-f"></i></a>
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+                      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                  </div>
+              </div>
+              <div class="footer-links">
+                  <h3>Quick Links</h3>
+                  <ul>
+                      <li><a href="index.html">Home</a></li>
+                      <li><a href="about.html">About Us</a></li>
+                      <li><a href="features.html">Features</a></li>
+                      <li><a href="blog.html">Blog</a></li>
+                      <li><a href="contact.html">Contact Us</a></li>
+                  </ul>
+              </div>
+              <div class="footer-links">
+                  <h3>Features</h3>
+                  <ul>
+                      <li><a href="features.html#personalized">Personalized Learning</a></li>
+                      <li><a href="features.html#goals">Goal Achievement</a></li>
+                      <li><a href="features.html#management">Study Load Management</a></li>
+                      <li><a href="features.html#gamification">Gamification</a></li>
+                  </ul>
+              </div>
+              <div class="footer-contact">
+                  <h3>Contact Us</h3>
+                  <p><i class="fas fa-envelope"></i> support@vectorlabs.com</p>
+                  <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                  <!-- <p><i class="fas fa-map-marker-alt"></i> 123 Education Ave, Learning City, LC 12345</p> -->
+              </div>
+          </div>
+          <div class="footer-bottom">
+              <p>&copy; 2025 Vector Labs. All rights reserved.</p>
+              <div class="footer-bottom-links">
+                  <a href="privacy.html">Privacy Policy</a>
+                  <a href="terms.html">Terms of Service</a>
+              </div>
+          </div>
+      </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Blog-specific JavaScript
+    document.addEventListener('DOMContentLoaded', function() {
+        // Animate blog posts on scroll
+        gsap.utils.toArray('.blog-post').forEach(post => {
+            gsap.from(post, {
+                y: 50,
+                opacity: 0,
+                duration: 0.8,
+                scrollTrigger: {
+                    trigger: post,
+                    start: 'top 80%',
+                }
+            });
+        });
+
+        // Load more button functionality
+        const loadMoreBtn = document.querySelector('.load-more-btn');
+        if (loadMoreBtn) {
+            loadMoreBtn.addEventListener('click', function() {
+                this.classList.add('loading');
+                
+                // Simulate loading
+                setTimeout(() => {
+                    this.classList.remove('loading');
+                    // Here you would normally fetch and append more posts
+                    alert('More posts would be loaded here in a real implementation');
+                }, 1500);
+            });
+        }
+
+        // Categories hover effect
+        const categoryItems = document.querySelectorAll('.categories-list li');
+        categoryItems.forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                gsap.to(this, {
+                    x: 5,
+                    duration: 0.3,
+                    ease: 'power2.out'
+                });
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                gsap.to(this, {
+                    x: 0,
+                    duration: 0.3,
+                    ease: 'power2.out'
+                });
+            });
+        });
+    });
+  </script>
+</body>
+</html>
+
