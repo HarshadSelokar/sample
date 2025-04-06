@@ -1,5 +1,28 @@
+
+.hero-wave{
+
+    background: url('images/contact.png')  center center/cover no-repeat;
+    /* background-repeat: no-repeat; */
+    height: 16rem;
+    text-align: center;
+    color: white;
+    display: grid;
+    justify-content: center;
+    gap: -10px;
+    align-items: center;
+ font-size: larger;
+}
+
+
+
 .page-hero{
-    margin-top: 7rem;
+    margin-top: 5.4rem;
+}
+
+.contact-section{
+
+    margin-top: 3rem;
+
 }
 
 .contact-info {
@@ -352,6 +375,9 @@
     .faq-question{
 
         font-size: 16px;
+    }
+    .page-hero{
+        margin-top: 4.8rem;
     }
 }
 
