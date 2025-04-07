@@ -152,10 +152,10 @@
 /* FORM CSS */
 
 .form {
-    display: flex;
+   display: flex;
     flex-direction: column;
     gap: 10px;
-    max-width: 350px;
+    width: 34rem;
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
@@ -378,6 +378,12 @@
     }
     .page-hero{
         margin-top: 4.8rem;
+    }
+
+
+    .form{
+
+        width: 23rem;
     }
 }
 
