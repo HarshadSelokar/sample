@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+  <link rel="stylesheet" href="signup.css" />
+  <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth-compat.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h2>Register</h2>
+    <input type="email" id="email" placeholder="Email" />
+    <input type="password" id="password" placeholder="Password" />
+    <button onclick="register()">Register</button>
+    <p id="message"></p>
+    <p>Already have an account? <a href="login.html">Login</a></p>
+  </div>
+
+  <script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyAmMjEt8SLe3jC5mz2GDGNVyZsjc8gAbsg",
+        authDomain: "vector-lab-34bcd.firebaseapp.com",
+        projectId: "vector-lab-34bcd",
+        storageBucket: "vector-lab-34bcd.firebasestorage.app",
+        messagingSenderId: "378884681048",
+        appId: "1:378884681048:web:72cccb4c8e45395d56492d",
+        measurementId: "G-Y0VN9K7XR4"
+    };
+
+
+    if (!firebase.apps.length) {
+      firebase.initializeApp(firebaseConfig);
+    }
+
+    const auth = firebase.auth();
+
+    function register() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      auth.createUserWithEmailAndPassword(email, password)
+        .then(() => {
+          document.getElementById("message").innerText = "✅ Registered successfully!";
+          setTimeout(() => window.location.href = "login.html", 1000);
+        })
+        .catch(error => {
+          document.getElementById("message").innerText = "❌ " + error.message;
+        });
+    }
+  </script>
+</body>
+</html>

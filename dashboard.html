@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+  <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth-compat.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h2>Welcome to Dashboard</h2>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyAmMjEt8SLe3jC5mz2GDGNVyZsjc8gAbsg",
+        authDomain: "vector-lab-34bcd.firebaseapp.com",
+        projectId: "vector-lab-34bcd",
+        storageBucket: "vector-lab-34bcd.firebasestorage.app",
+        messagingSenderId: "378884681048",
+        appId: "1:378884681048:web:72cccb4c8e45395d56492d",
+        measurementId: "G-Y0VN9K7XR4"
+    };
+
+    if (!firebase.apps.length) {
+      firebase.initializeApp(firebaseConfig);
+    }
+
+    const auth = firebase.auth();
+
+    auth.onAuthStateChanged(user => {
+      if (!user) {
+        window.location.href = "login.html";
+      }
+    });
+
+    function logout() {
+      auth.signOut().then(() => {
+        window.location.href = "login.html";
+      });
+    }
+  </script>
+</body>
+</html>
