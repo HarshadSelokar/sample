@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Blog Admin Dashboard</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin-top: 10px;
+        }
+
+        .blog-item {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Admin Blog Dashboard</h1>
+
+    <h2>Create / Update Blog</h2>
+    <input type="hidden" id="blog-id">
+    <input type="text" id="title" placeholder="Blog Title">
+    <textarea id="content" placeholder="Blog Content"></textarea>
+    <input type="text" id="category" placeholder="Category">
+    <input type="text" id="readTime" placeholder="Read Time (minutes)">
+    <input type="text" id="imageUrl" placeholder="Image URL">
+    <button onclick="submitBlog()">Submit Blog</button>
+
+    <h2>All Blogs</h2>
+    <div id="blogs-list"></div>
+
+    <!-- Firebase Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyDcspoxuhH8LUgx9fSxPTO3QuvkQjx9W_g",
+            authDomain: "vectorwebsiteblog.firebaseapp.com",
+            projectId: "vectorwebsiteblog"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+
+        auth.onAuthStateChanged(async (user) => { if (!user) {
+            window.location.href = "login.html";
+            return; 
+        }
+        const adminDoc = await db.collection("admins").doc(user.email).get(); 
+        if (!adminDoc.exists) { 
+            alert("You are not authorized."); 
+            window.location.href = "login.html"; 
+        } 
+    });
+
+        // Blog CRUD Logic
+        function submitBlog() {
+            const id = document.getElementById('blog-id').value;
+            const data = {
+                title: document.getElementById('title').value,
+                content: document.getElementById('content').value,
+                category: document.getElementById('category').value,
+                readTime: +document.getElementById('readTime').value,
+                imageUrl: document.getElementById('imageUrl').value,
+                createdAt: new Date()
+            };
+
+            if (id) {
+                db.collection("blogs").doc(id).update(data).then(() => {
+                    alert("Blog updated");
+                    resetForm();
+                    fetchBlogs();
+                });
+            } else {
+                db.collection("blogs").add(data).then(() => {
+                    alert("Blog added");
+                    resetForm();
+                    fetchBlogs();
+                });
+            }
+        }
+
+        function fetchBlogs() {
+            db.collection("blogs").orderBy("createdAt", "desc").get().then(snapshot => {
+                const container = document.getElementById("blogs-list");
+                container.innerHTML = "";
+                snapshot.forEach(doc => {
+                    const blog = doc.data();
+                    const div = document.createElement("div");
+                    div.className = "blog-item";
+                    div.innerHTML = `
+            <strong>${blog.title}</strong> (${blog.category}) - ${blog.readTime} min<br>
+            <button onclick="editBlog('${doc.id}', \`${blog.title}\`, \`${blog.content}\`, '${blog.category}', '${blog.readTime}', '${blog.imageUrl}')">Edit</button>
+            <button onclick="deleteBlog('${doc.id}')">Delete</button>
+          `;
+                    container.appendChild(div);
+                });
+            });
+        }
+
+        function editBlog(id, title, content, category, readTime, imageUrl) {
+            document.getElementById('blog-id').value = id;
+            document.getElementById('title').value = title;
+            document.getElementById('content').value = content;
+            document.getElementById('category').value = category;
+            document.getElementById('readTime').value = readTime;
+            document.getElementById('imageUrl').value = imageUrl;
+        }
+
+        function deleteBlog(id) {
+            if (confirm("Are you sure you want to delete this blog?")) {
+                db.collection("blogs").doc(id).delete().then(() => {
+                    alert("Blog deleted");
+                    fetchBlogs();
+                });
+            }
+        }
+
+        function resetForm() {
+            document.getElementById("blog-id").value = "";
+            document.getElementById("title").value = "";
+            document.getElementById("content").value = "";
+            document.getElementById("category").value = "";
+            document.getElementById("readTime").value = "";
+            document.getElementById("imageUrl").value = "";
+        }
+
+        document.addEventListener("DOMContentLoaded", fetchBlogs);
+    </script>
+
+
+
+    <!-- <script>
+        // Only allow if logged-in user is admin
+        auth.onAuthStateChanged((user) => {
+            if (!user || user.email !== "admin@company.com") {
+                alert("Unauthorized access. Redirecting to login...");
+                window.location.href = "login.html";
+            }
+        });
+    </script> -->
+</body>
+
+</html>

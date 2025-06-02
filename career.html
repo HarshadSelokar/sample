@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Careers at Vector Lab - Join Our Team</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="career.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Canvas Background -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html"><img src="https://i.postimg.cc/pdy0pqqr/Vector.png" alt="Vector Labs Logo" /></a>
+      </div>
+      <div class="nav-toggle"><span></span><span></span><span></span></div>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="career.html" class="active">Careers</a></li>
+        <li><a href="login2.html" class="btn btn-primary">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="career-hero">
+    <div class="container">
+      <div class="career-hero-content">
+        <h1 class="headline" id="heroHeadline">Join Our Mission to Transform Education</h1>
+        <p class="subheadline" id="heroSubheadline">Be part of a team that's revolutionizing how students learn and achieve their goals.</p>
+        <a href="#openings" class="btn btn-primary">View Open Positions</a>
+      </div>
+      <div class="career-hero-visual">
+        <div id="career-3d-container">
+          <img src="images/Data Streams.gif" alt="Career Visual" id="heroImage" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Join Us -->
+  <section class="why-join-us">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="glitch" data-text="Why Join Vector Labs?">Why Join Vector Lab?</h2>
+            <p>We're building the future of education technology with a team of passionate innovators.</p>
+        </div>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h3>Innovation-Driven</h3>
+                <p>Work on cutting-edge technology that's changing how students learn worldwide.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Collaborative Culture</h3>
+                <p>Join a diverse team that values different perspectives and ideas.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Growth Opportunities</h3>
+                <p>Continuous learning and career advancement in a rapidly growing company.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-balance-scale"></i>
+                </div>
+                <h3>Work-Life Balance</h3>
+                <p>Flexible schedules and remote options to help you thrive professionally and personally.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-hand-holding-heart"></i>
+                </div>
+                <h3>Comprehensive Benefits</h3>
+                <p>Competitive salary, health insurance, retirement plans, and more.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h3>Global Impact</h3>
+                <p>Make a difference in education systems and student lives around the world.</p>
+            </div>
+        </div>
+    </div>
+</section>
+  <!-- Current Openings -->
+  <section id="openings" class="current-openings">
+    <div class="container">
+      <div class="section-header">
+        <h2>Current Openings</h2>
+        <p>Explore opportunities to join our team and make an impact.</p>
+      </div>
+      <div class="jobs-container" id="jobsContainer">
+        <!-- Job listings will be loaded dynamically from Firebase -->
+        <div class="loading-spinner">Loading job openings...</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Application Process -->
+  <section class="application-process">
+    <div class="container">
+        <div class="section-header">
+            <h2>Our Application Process</h2>
+            <p>We've designed a straightforward process to help you join our team.</p>
+        </div>
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Apply Online</h3>
+                    <p>Submit your application through our careers portal with your resume and cover letter.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Initial Screening</h3>
+                    <p>Our recruitment team will review your application and reach out for an initial conversation.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Skills Assessment</h3>
+                    <p>Depending on the role, you may be asked to complete a skills assessment or technical challenge.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3>Team Interviews</h3>
+                    <p>Meet with potential team members and leaders to discuss your experience and our expectations.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                    <h3>Offer & Onboarding</h3>
+                    <p>Receive your offer and join our comprehensive onboarding program to set you up for success.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+  <!-- Employee Testimonials -->
+  <section class="employee-testimonials">
+    <div class="container">
+        <div class="section-header">
+            <h2>Life at Vector Lab</h2>
+            <p>Hear from our team members about their experiences working with us.</p>
+        </div>
+        <div class="testimonial-slider">
+            <div class="testimonial-slide active">
+                <div class="testimonial-content">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Working at Vector Lab has been the highlight of my career. The collaborative environment and focus on innovation allow me to grow professionally while making a real impact on education."</p>
+                    <div class="testimonial-author">
+                        <img src="images/testimonial-1.jpg" alt="David K.">
+                        <div>
+                            <h4>David K.</h4>
+                            <p>Senior Developer, 3 years</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-slide">
+                <div class="testimonial-content">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"The work-life balance and growth opportunities at Vector Lab are unmatched. I've been able to advance my career while working with cutting-edge technologies and brilliant colleagues."</p>
+                    <div class="testimonial-author">
+                        <img src="images/testimonial-2.jpg" alt="Sophia R.">
+                        <div>
+                            <h4>Sophia R.</h4>
+                            <p>Product Manager, 2 years</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-slide">
+                <div class="testimonial-content">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"What I love most about Vector Lab is how we're making a real difference in education. Every day, I know my work is helping students around the world achieve their academic goals."</p>
+                    <div class="testimonial-author">
+                        <img src="images/testimonial-3.jpg" alt="Marcus J.">
+                        <div>
+                            <h4>Marcus J.</h4>
+                            <p>Data Scientist, 1.5 years</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="testimonial-controls">
+            <button class="testimonial-prev"><i class="fas fa-chevron-left"></i></button>
+            <div class="testimonial-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+            <button class="testimonial-next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+</section>
+
+  <!-- No Openings Section -->
+  <section class="no-openings">
+    <div class="container">
+      <div class="no-openings-content">
+        <h2>Don't see a role that fits?</h2>
+        <p>We're always looking for talented individuals to join our team. Send us your resume and we'll keep you in mind for future opportunities.</p>
+        <a href="#" class="btn btn-primary" id="openApplicationModal">Submit Your Resume</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Application Modal -->
+  <div class="modal" id="applicationModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Submit Your Application</h2>
+        <button class="close-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="applicationForm">
+          <div class="form-group">
+            <label for="applicantName">Full Name*</label>
+            <input type="text" id="applicantName" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="applicantEmail">Email*</label>
+            <input type="email" id="applicantEmail" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="applicantPhone">Phone Number</label>
+            <input type="tel" id="applicantPhone">
+          </div>
+          
+          <div class="form-group">
+            <label for="applicantPosition">Position of Interest*</label>
+            <select id="applicantPosition" required>
+              <option value="">Select a position</option>
+              <!-- Options will be loaded dynamically from Firebase -->
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="applicantResume">Resume/CV*</label>
+            <div class="file-upload">
+              <input type="file" id="applicantResume" accept=".pdf,.doc,.docx" required>
+              <label for="applicantResume" class="file-label">
+                <i class="fas fa-upload"></i> Choose File
+              </label>
+              <span class="file-name">No file chosen</span>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="applicantCoverLetter">Cover Letter</label>
+            <textarea id="applicantCoverLetter" rows="5"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="cancelApplicationBtn">Cancel</button>
+        <button class="btn btn-primary" id="submitApplicationBtn">Submit Application</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Call to Action -->
+  <section class="cta">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Ready to shape the future of education?</h2>
+        <p>Join our team and help us transform how students learn and achieve their goals.</p>
+        <div class="cta-buttons">
+          <a href="#openings" class="btn btn-primary">View Open Positions</a>
+          <a href="contact.html" class="btn btn-outline">Contact Us</a>
+        </div>
+      </div>
+    </div>
+    <div id="cta-particles"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-about">
+                <img src="images/Vector.png" alt="Vector Labs Logo" class="footer-logo">
+                <p style="text-align: center;">Empowering students worldwide with smart learning solutions that transform education.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="career.html">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>Features</h3>
+                <ul>
+                    <li><a href="features.html#personalized">Personalized Learning</a></li>
+                    <li><a href="features.html#goals">Goal Achievement</a></li>
+                    <li><a href="features.html#management">Study Load Management</a></li>
+                    <li><a href="features.html#gamification">Gamification</a></li>
+                    <li><a href="features.html#collaboration">Collaborative Learning</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-envelope"></i> support@vectorlab.in</p>
+                <!-- <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Education Ave, Learning City, LC 12345</p> -->
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Vector Lab. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+  <!-- Career Page Script -->
+  <script src="js/career.js"></script>
+
+  <!-- Site Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/TextPlugin.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="js/three-setup.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/career.js"></script>
+  <!-- Firebase Scripts -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage-compat.js"></script>
+
+
+</body>
+</html>

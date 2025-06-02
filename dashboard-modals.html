@@ -1,0 +1,75 @@
+<!-- Benefit Modal -->
+<div class="modal" id="benefitModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 id="benefitModalTitle">Add New Benefit</h2>
+            <button class="close-modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form id="benefitForm">
+                <input type="hidden" id="benefitId" value="">
+                
+                <div class="form-group">
+                    <label for="benefitTitle">Benefit Title*</label>
+                    <input type="text" id="benefitTitle" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="benefitDescription">Description*</label>
+                    <textarea id="benefitDescription" rows="4" required></textarea>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="benefitIcon">Icon Class</label>
+                        <input type="text" id="benefitIcon" placeholder="fa-check-circle" value="fa-check-circle">
+                        <small>Enter a Font Awesome icon class (e.g., fa-check-circle, fa-users, fa-rocket)</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="benefitOrder">Display Order*</label>
+                        <input type="number" id="benefitOrder" min="1" required>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-secondary" id="cancelBenefitBtn">Cancel</button>
+            <button class="btn btn-primary" id="saveBenefitBtn">Save Benefit</button>
+        </div>
+    </div>
+</div>
+
+<!-- Process Step Modal -->
+<div class="modal" id="stepModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 id="stepModalTitle">Add New Process Step</h2>
+            <button class="close-modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form id="stepForm">
+                <input type="hidden" id="stepId" value="">
+                
+                <div class="form-group">
+                    <label for="stepTitle">Step Title*</label>
+                    <input type="text" id="stepTitle" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="stepDescription">Description*</label>
+                    <textarea id="stepDescription" rows="4" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="stepOrder">Step Number*</label>
+                    <input type="number" id="stepOrder" min="1" required>
+                    <small>This determines the order in which steps are displayed</small>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-secondary" id="cancelStepBtn">Cancel</button>
+            <button class="btn btn-primary" id="saveStepBtn">Save Step</button>
+        </div>
+    </div>
+</div>

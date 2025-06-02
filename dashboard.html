@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Vector Labs</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="temp.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Three.js Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <img src="images/Vector.png" alt="Vector Labs Logo" class="sidebar-logo">
+                <!-- <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button> -->
+            </div>
+            
+            <div class="user-profile">
+                <div class="user-avatar">
+                    <img src="https://cdn.pixabay.com/photo/2022/06/05/07/04/person-7243410_1280.png" alt="User Avatar" id="userAvatar">
+                </div>
+                <div class="user-info">
+                    <h3 id="userName">John Doe</h3>
+                    <p id="userRole">Administrator</p>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active">
+                        <a href="dashboard.html">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link" data-page="blog">
+                            <i class="fas fa-blog"></i>
+                            <span>Blog Management</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link" data-page="career">
+                            <i class="fas fa-briefcase"></i>
+                            <span>Career Management</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html">
+                            <i class="fas fa-globe"></i>
+                            <span>View Website</span>
+                        </a>
+                    </li>
+                    <li class="logout">
+                        <a href="#" id="logoutBtn">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <header class="dashboard-header">
+                <div class="header-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+                <div class="header-actions">
+                    <div class="notification-bell">
+                        <!-- <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span> -->
+                    </div>
+                    <div class="header-user">
+                        <img src="https://cdn.pixabay.com/photo/2022/06/05/07/04/person-7243410_1280.png" alt="User Avatar" id="headerUserAvatar">
+                        <span id="headerUserName">John Doe</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Overview -->
+            <section class="dashboard-overview" id="dashboardOverview">
+                <h1>Dashboard Overview</h1>
+                <p class="last-login">Last login: <span id="lastLoginTime">April 17, 2025, 10:30 AM</span></p>
+                
+                <div class="stats-cards">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Total Users</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Blog Posts</h3>
+                            <p id="blogCount">0</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Job Listings</h3>
+                            <p>8</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Monthly Visitors</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="recent-activity">
+                    <h2>Recent Activity</h2>
+                    <div class="activity-list" id="recentActivityList">
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-plus-circle"></i>
+                            </div>
+                            <div class="activity-details">
+                                <p>New job listing added: <strong>UX/UI Designer</strong></p>
+                                <span class="activity-time">Today, 9:45 AM</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-edit"></i>
+                            </div>
+                            <div class="activity-details">
+                                <p>Blog post updated: <strong>The Future of EdTech</strong></p>
+                                <span class="activity-time">Yesterday, 3:20 PM</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <div class="activity-details">
+                                <p>New user registered: <strong>Sarah Johnson</strong></p>
+                                <span class="activity-time">April 16, 2025, 11:15 AM</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-trash-alt"></i>
+                            </div>
+                            <div class="activity-details">
+                                <p>Job listing removed: <strong>Marketing Specialist</strong></p>
+                                <span class="activity-time">April 15, 2025, 2:30 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Blog Management Section -->
+            <section class="blog-management" id="blogManagement" style="display: none;">
+                <div class="section-header">
+                    <h1>Blog Management</h1>
+                </div>
+                
+                <div class="blog-editor">
+                    <h2>Create / Update Blog</h2>
+                    <form id="blogForm">
+                        <input type="hidden" id="blog-id">
+                        <div class="form-group">
+                            <label for="title">Blog Title</label>
+                            <input type="text" id="title" placeholder="Enter blog title" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="content">Blog Content</label>
+                            <textarea id="content" rows="8" placeholder="Enter blog content" required></textarea>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                              <label for="category">Category</label>
+                              <input type="text" id="category" list="category-options" placeholder="e.g., Education, Technology" required>
+                              <datalist id="category-options">
+                                <option value="Productivity">
+                                <option value="AI in Education">
+                                <option value="Learning Strategies">
+                                <option value="Goal Setting">
+                                <option value="Student Success">
+                                <option value="Gamification">
+                              </datalist>
+                            </div>
+                          
+                            <div class="form-group">
+                              <label for="readTime">Read Time (minutes)</label>
+                              <input type="number" id="readTime" placeholder="e.g., 5" required>
+                            </div>
+                          </div>
+                          
+                        
+                        <div class="form-group">
+                            <label for="imageUrl">Featured Image URL</label>
+                            <input type="text" id="imageUrl" placeholder="Enter image URL">
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-secondary" id="resetBlogBtn">Reset</button>
+                            <button type="button" class="btn btn-primary" id="submitBlogBtn">Submit Blog</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="blog-list-section">
+                    <h2>All Blogs</h2>
+                    <div class="blog-posts-list" id="blogs-list">
+                        <!-- Blog posts will be loaded here dynamically -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Career Management Section -->
+            <section class="career-management" id="careerManagement" style="display: none;">
+                <div class="section-header">
+                    <h1>Career Management</h1>
+                    <button class="btn btn-primary" id="addJobBtn"><i class="fas fa-plus"></i> Add Job Listing</button>
+                </div>
+                
+                <div class="career-tabs">
+                    <button class="tab-btn active" data-tab="jobListings">Job Listings</button>
+                    <!-- <button class="tab-btn" data-tab="pageContent">Page Content</button> -->
+                    <button class="tab-btn" data-tab="applications">Applications</button>
+                </div>
+                
+                <!-- Job Listings Tab -->
+                <div class="tab-content active" id="jobListings">
+                    <div class="job-listings-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Position</th>
+                                    <th>Department</th>
+                                    <th>Location</th>
+                                    <th>Type</th>
+                                    <th>Posted Date</th>
+                                    <th>Applications</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Senior Full Stack Developer</td>
+                                    <td>Engineering</td>
+                                    <td>Remote / San Francisco</td>
+                                    <td>Full-time</td>
+                                    <td>Apr 10, 2025</td>
+                                    <td>24</td>
+                                    <td><span class="status-active">Active</span></td>
+                                    <td>
+                                        <button class="btn-icon edit-job-btn" data-id="1"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-trash-alt"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>UX/UI Designer</td>
+                                    <td>Design</td>
+                                    <td>Remote / New York</td>
+                                    <td>Full-time</td>
+                                    <td>Apr 8, 2025</td>
+                                    <td>18</td>
+                                    <td><span class="status-active">Active</span></td>
+                                    <td>
+                                        <button class="btn-icon edit-job-btn" data-id="2"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-trash-alt"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Data Scientist</td>
+                                    <td>Data</td>
+                                    <td>Remote / Boston</td>
+                                    <td>Full-time</td>
+                                    <td>Apr 5, 2025</td>
+                                    <td>12</td>
+                                    <td><span class="status-active">Active</span></td>
+                                    <td>
+                                        <button class="btn-icon edit-job-btn" data-id="3"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-trash-alt"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Education Content Specialist</td>
+                                    <td>Content</td>
+                                    <td>Remote / Chicago</td>
+                                    <td>Full-time</td>
+                                    <td>Apr 1, 2025</td>
+                                    <td>9</td>
+                                    <td><span class="status-active">Active</span></td>
+                                    <td>
+                                        <button class="btn-icon edit-job-btn" data-id="4"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-trash-alt"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Marketing Specialist</td>
+                                    <td>Marketing</td>
+                                    <td>Remote / Austin</td>
+                                    <td>Full-time</td>
+                                    <td>Mar 25, 2025</td>
+                                    <td>15</td>
+                                    <td><span class="status-inactive">Closed</span></td>
+                                    <td>
+                                        <button class="btn-icon edit-job-btn" data-id="5"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-trash-alt"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- Page Content Tab -->
+                <div class="tab-content" id="pageContent">
+                    <div class="content-editor">
+                        <div class="editor-section">
+                            <h3>Hero Section</h3>
+                            <div class="form-group">
+                                <label for="heroHeadline">Headline</label>
+                                <input type="text" id="heroHeadline" value="Join Our Mission to Transform Education">
+                            </div>
+                            <div class="form-group">
+                                <label for="heroSubheadline">Subheadline</label>
+                                <textarea id="heroSubheadline" rows="3">Be part of a team that's revolutionizing how students learn and achieve their goals.</textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="heroImage">Hero Image</label>
+                                <div class="file-upload">
+                                    <input type="file" id="heroImage">
+                                    <label for="heroImage" class="file-label">
+                                        <i class="fas fa-upload"></i> Choose File
+                                    </label>
+                                    <span class="file-name">No file chosen</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="editor-section">
+                            <h3>Why Join Us Section</h3>
+                            <div class="form-group">
+                                <label for="whyJoinHeadline">Section Headline</label>
+                                <input type="text" id="whyJoinHeadline" value="Why Join Vector Labs?">
+                            </div>
+                            <div class="form-group">
+                                <label for="whyJoinSubheadline">Section Subheadline</label>
+                                <textarea id="whyJoinSubheadline" rows="3">We're building the future of education technology with a team of passionate innovators.</textarea>
+                            </div>
+                            
+                            <div class="benefits-editor">
+                                <h4>Benefits (6)</h4>
+                                <div class="benefits-list">
+                                    <div class="benefit-item">
+                                        <div class="benefit-header">
+                                            <h5>Innovation-Driven</h5>
+                                            <div class="benefit-actions">
+                                                <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                                <button class="btn-icon"><i class="fas fa-trash-alt"></i></button>
+                                            </div>
+                                        </div>
+                                        <p>Work on cutting-edge technology that's changing how students learn worldwide.</p>
+                                    </div>
+                                    <div class="benefit-item">
+                                        <div class="benefit-header">
+                                            <h5>Collaborative Culture</h5>
+                                            <div class="benefit-actions">
+                                                <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                                <button class="btn-icon"><i class="fas fa-trash-alt"></i></button>
+                                            </div>
+                                        </div>
+                                        <p>Join a diverse team that values different perspectives and ideas.</p>
+                                    </div>
+                                    <!-- More benefit items would be listed here -->
+                                </div>
+                                <button class="btn btn-secondary mt-3"><i class="fas fa-plus"></i> Add Benefit</button>
+                            </div>
+                        </div>
+                        
+                        <div class="editor-section">
+                            <h3>Application Process</h3>
+                            <div class="form-group">
+                                <label for="processHeadline">Section Headline</label>
+                                <input type="text" id="processHeadline" value="Our Application Process">
+                            </div>
+                            <div class="form-group">
+                                <label for="processSubheadline">Section Subheadline</label>
+                                <textarea id="processSubheadline" rows="3">We've designed a straightforward process to help you join our team.</textarea>
+                            </div>
+                            
+                            <div class="process-steps-editor">
+                                <h4>Process Steps (5)</h4>
+                                <div class="process-steps-list">
+                                    <div class="process-step-item">
+                                        <div class="step-header">
+                                            <span class="step-number">1</span>
+                                            <h5>Apply Online</h5>
+                                            <div class="step-actions">
+                                                <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                                <button class="btn-icon"><i class="fas fa-trash-alt"></i></button>
+                                            </div>
+                                        </div>
+                                        <p>Submit your application through our careers portal with your resume and cover letter.</p>
+                                    </div>
+                                    <div class="process-step-item">
+                                        <div class="step-header">
+                                            <span class="step-number">2</span>
+                                            <h5>Initial Screening</h5>
+                                            <div class="step-actions">
+                                                <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                                <button class="btn-icon"><i class="fas fa-trash-alt"></i></button>
+                                            </div>
+                                        </div>
+                                        <p>Our recruitment team will review your application and reach out for an initial conversation.</p>
+                                    </div>
+                                    <!-- More process steps would be listed here -->
+                                </div>
+                                <button class="btn btn-secondary mt-3"><i class="fas fa-plus"></i> Add Step</button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button class="btn btn-secondary">Cancel</button>
+                            <button class="btn btn-primary" id="savePageContent">Save Changes</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Applications Tab -->
+                <div class="tab-content" id="applications">
+                    <div class="applications-filters">
+                        <div class="filter-group">
+                            <label for="positionFilter">Position</label>
+                            <select id="positionFilter">
+                                <option value="">All Positions</option>
+                                <option value="developer">Senior Full Stack Developer</option>
+                                <option value="designer">UX/UI Designer</option>
+                                <option value="data">Data Scientist</option>
+                                <option value="content">Education Content Specialist</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="statusFilter">Status</label>
+                            <select id="statusFilter">
+                                <option value="">All Statuses</option>
+                                <option value="new">New</option>
+                                <option value="reviewing">Reviewing</option>
+                                <option value="interview">Interview</option>
+                                <option value="offered">Offered</option>
+                                <option value="rejected">Rejected</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="dateFilter">Date</label>
+                            <select id="dateFilter">
+                                <option value="">All Dates</option>
+                                <option value="today">Today</option>
+                                <option value="week">This Week</option>
+                                <option value="month">This Month</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-secondary">Filter</button>
+                    </div>
+                    
+                    <div class="applications-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Applicant</th>
+                                    <th>Position</th>
+                                    <th>Applied Date</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="applicant-info">
+                                            <img src="images/avatar-1.jpg" alt="Applicant">
+                                            <div>
+                                                <h4>Emily Johnson</h4>
+                                                <p>emily.johnson@example.com</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>UX/UI Designer</td>
+                                    <td>Apr 16, 2025</td>
+                                    <td><span class="status-new">New</span></td>
+                                    <td>
+                                        <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-download"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="applicant-info">
+                                            <img src="images/avatar-2.jpg" alt="Applicant">
+                                            <div>
+                                                <h4>David Rodriguez</h4>
+                                                <p>david.rodriguez@example.com</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Senior Full Stack Developer</td>
+                                    <td>Apr 15, 2025</td>
+                                    <td><span class="status-reviewing">Reviewing</span></td>
+                                    <td>
+                                        <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-download"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="applicant-info">
+                                            <img src="images/avatar-3.jpg" alt="Applicant">
+                                            <div>
+                                                <h4>Sarah Chen</h4>
+                                                <p>sarah.chen@example.com</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Data Scientist</td>
+                                    <td>Apr 14, 2025</td>
+                                    <td><span class="status-interview">Interview</span></td>
+                                    <td>
+                                        <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-download"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="applicant-info">
+                                            <img src="images/avatar-4.jpg" alt="Applicant">
+                                            <div>
+                                                <h4>Michael Thompson</h4>
+                                                <p>michael.thompson@example.com</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Education Content Specialist</td>
+                                    <td>Apr 12, 2025</td>
+                                    <td><span class="status-offered">Offered</span></td>
+                                    <td>
+                                        <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-download"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="applicant-info">
+                                            <img src="images/avatar-5.jpg" alt="Applicant">
+                                            <div>
+                                                <h4>Jessica Williams</h4>
+                                                <p>jessica.williams@example.com</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Senior Full Stack Developer</td>
+                                    <td>Apr 10, 2025</td>
+                                    <td><span class="status-rejected">Rejected</span></td>
+                                    <td>
+                                        <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-download"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Job Form Modal -->
+            <div class="modal" id="jobFormModal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 id="modalTitle">Add New Job Listing</h2>
+                        <button class="close-modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="jobForm">
+                            <input type="hidden" id="jobId" value="">
+                            
+                            <div class="form-group">
+                                <label for="jobTitle">Job Title*</label>
+                                <input type="text" id="jobTitle" required>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="jobDepartment">Department*</label>
+                                    <select id="jobDepartment" required>
+                                        <option value="">Select Department</option>
+                                        <option value="Engineering">Engineering</option>
+                                        <option value="Design">Design</option>
+                                        <option value="Marketing">Marketing</option>
+                                        <option value="Content">Content</option>
+                                        <option value="Data">Data</option>
+                                        <option value="HR">HR</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="jobType">Job Type*</label>
+                                    <select id="jobType" required>
+                                        <option value="">Select Type</option>
+                                        <option value="Full-time">Full-time</option>
+                                        <option value="Part-time">Part-time</option>
+                                        <option value="Contract">Contract</option>
+                                        <option value="Internship">Internship</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="jobLocation">Location*</label>
+                                <input type="text" id="jobLocation" placeholder="e.g., Remote / San Francisco" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="jobDescription">Job Description*</label>
+                                <textarea id="jobDescription" rows="5" required></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="jobRequirements">Requirements</label>
+                                <textarea id="jobRequirements" rows="5"></textarea>
+                                <small>Enter each requirement on a new line</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="jobSkills">Skills</label>
+                                <input type="text" id="jobSkills" placeholder="e.g., React, Node.js, MongoDB">
+                                <small>Separate skills with commas</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="jobSalary">Salary Range</label>
+                                <input type="text" id="jobSalary" placeholder="e.g., $80,000 - $100,000">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Status</label>
+                                <div class="radio-group">
+                                    <label>
+                                        <input type="radio" name="jobStatus" value="active" checked> Active
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="jobStatus" value="draft"> Draft
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" id="cancelJobBtn">Cancel</button>
+                        <button class="btn btn-primary" id="saveJobBtn">Save Job</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Firebase Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage-compat.js"></script>
+    
+    <!-- Other Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- <script>
+
+const firebaseConfig = {
+    apiKey: "AIzaSyDcspoxuhH8LUgx9fSxPTO3QuvkQjx9W_g",
+      authDomain: "vectorwebsiteblog.firebaseapp.com",
+      projectId: "vectorwebsiteblog",
+      storageBucket: "vectorwebsiteblog.appspot.com"
+};
+
+firebase.initializeApp(firebaseConfig);
+
+const auth = firebase.auth();
+const db = firebase.firestore();
+
+
+
+auth.onAuthStateChanged(async (user) => {
+    if (!user) {
+
+      window.location.href = "login.html";
+    } else {
+
+      const doc = await db.collection("admins").doc(user.email).get();
+
+      if (!doc.exists) {
+
+        alert("Access denied. Admins only.");
+        window.location.href = "login.html";
+      } else {
+        // Admin verified, load secure content
+        loadJobs();   // Custom function to fetch/render jobs
+        loadBlogs();  // Custom function to fetch/render blogs
+      }
+    }
+  });
+  async function loadJobs() {
+  const jobList = document.getElementById("job-list");
+  jobList.innerHTML = "";
+
+  const snapshot = await db.collection("jobs").orderBy("postedAt", "desc").get();
+
+  snapshot.forEach((doc) => {
+    const job = doc.data();
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${job.title}</td>
+      <td>${job.type}</td>
+      <td>${job.location}</td>
+      <td><span class="status ${job.status}">${job.status}</span></td>
+      <td>
+        <button class="btn edit" onclick="editJob('${doc.id}')">Edit</button>
+        <button class="btn delete" onclick="deleteJob('${doc.id}')">Delete</button>
+      </td>
+    `;
+    jobList.appendChild(row);
+  });
+}
+
+// 3. Load all Blog Posts from Firestore
+async function loadBlogs() {
+  const blogList = document.getElementById("blog-list");
+  blogList.innerHTML = "";
+
+  const snapshot = await db.collection("blogs").orderBy("createdAt", "desc").get();
+
+  snapshot.forEach((doc) => {
+    const blog = doc.data();
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${blog.title}</td>
+      <td>${blog.createdAt.toDate().toLocaleDateString()}</td>
+      <td>
+        <button class="btn edit" onclick="editBlog('${doc.id}')">Edit</button>
+        <button class="btn delete" onclick="deleteBlog('${doc.id}')">Delete</button>
+      </td>
+    `;
+    blogList.appendChild(row);
+  });
+}
+
+// 4. Add New Job
+document.getElementById("submit-job-btn").addEventListener("click", async () => {
+  const jobData = {
+    title: document.getElementById("job-title").value,
+    location: document.getElementById("job-location").value,
+    type: document.getElementById("job-type").value,
+    description: document.getElementById("job-desc").value,
+    requirements: document.getElementById("job-skills").value.split(",").map(s => s.trim()),
+    status: document.getElementById("job-status").value,
+    postedAt: new Date()
+  };
+
+  if (editingJobId) {
+    await db.collection("jobs").doc(editingJobId).update(jobData);
+    editingJobId = null;
+  } else {
+    await db.collection("jobs").add(jobData);
+  }
+
+  document.getElementById("job-modal").style.display = "none";
+  resetForm();
+  loadJobs();  // Refresh job list
+});
+
+// 5. Edit Job
+window.editJob = async function (id) {
+  const doc = await db.collection("jobs").doc(id).get();
+  const job = doc.data();
+  editingJobId = id;
+
+  document.getElementById("job-title").value = job.title;
+  document.getElementById("job-location").value = job.location;
+  document.getElementById("job-type").value = job.type;
+  document.getElementById("job-desc").value = job.description;
+  document.getElementById("job-skills").value = job.requirements.join(", ");
+  document.getElementById("job-status").value = job.status;
+
+  document.getElementById("job-modal").style.display = "block";
+};
+
+// 6. Delete Job
+window.deleteJob = async function (id) {
+  if (confirm("Delete this job?")) {
+    await db.collection("jobs").doc(id).delete();
+    loadJobs();  // Refresh job list after deletion
+  }
+};
+
+// 7. Add New Blog
+document.getElementById("submit-blog-btn").addEventListener("click", async () => {
+  const blogData = {
+    title: document.getElementById("blog-title").value,
+    content: document.getElementById("blog-content").value,
+    createdAt: new Date(),
+  };
+
+  if (editingBlogId) {
+    await db.collection("blogs").doc(editingBlogId).update(blogData);
+    editingBlogId = null;
+  } else {
+    await db.collection("blogs").add(blogData);
+  }
+
+  document.getElementById("blog-modal").style.display = "none";
+  resetForm();
+  loadBlogs();  // Refresh blog list
+});
+
+// 8. Edit Blog
+window.editBlog = async function (id) {
+  const doc = await db.collection("blogs").doc(id).get();
+  const blog = doc.data();
+  editingBlogId = id;
+
+  document.getElementById("blog-title").value = blog.title;
+  document.getElementById("blog-content").value = blog.content;
+
+  document.getElementById("blog-modal").style.display = "block";
+};
+
+// 9. Delete Blog
+window.deleteBlog = async function (id) {
+  if (confirm("Delete this blog?")) {
+    await db.collection("blogs").doc(id).delete();
+    loadBlogs();  // Refresh blog list after deletion
+  }
+};
+
+// 10. Reset Form Fields
+function resetForm() {
+  document.getElementById("job-title").value = "";
+  document.getElementById("job-location").value = "";
+  document.getElementById("job-type").value = "";
+  document.getElementById("job-desc").value = "";
+  document.getElementById("job-skills").value = "";
+  document.getElementById("job-status").value = "active";
+  document.getElementById("blog-title").value = "";
+  document.getElementById("blog-content").value = "";
+}
+    </script> -->
+
+    <script src="temp.js"></script>
+</body>
+</html>

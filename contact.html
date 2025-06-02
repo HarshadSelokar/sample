@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Vector Lab</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/Vector.png" alt="Vector Labs Logo">
+                </a>
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="career.html">Careers</a></li>
+                <li><a href="login2.html" class="btn btn-primary">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contact Hero Section -->
+    <section class="page-hero contact-hero">
+        <div class="container">
+            <div class="page-hero-content">
+
+            </div>
+        </div>
+        <div class="hero-wave">
+            <h1>Let's Get in Touch</h1>
+            <p>Have questions or feedback? We'd love to hear from you!</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Contact Information</h2>
+                    <p>Reach out to us through any of these channels:</p>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Email Us</h3>
+                                <p>support@vectorlab.in</p>
+                                <p>info@vectorlab.in</p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Call Us</h3>
+                                <p>+1 (555) 123-4567</p>
+                                <p>Mon-Fri, 9am-5pm EST</p>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="social-connect">
+                        <h3>Connect With Us</h3>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dash-div">
+
+                </div>
+
+                <div class="contact-form-container">
+                    <h2>Send Us a Message</h2>
+                    <form class="contact-form" id="contactForm" action="submit_form.php" method="POST">
+                        <div class="form-row">
+
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name"/>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="message">Message</label>
+                            <textarea id="message" rows="4" name="message" placeholder="Your message here..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find quick answers to common questions</p>
+            </div>
+
+            <div class="faq-container">
+                <!-- FAQ Item 1 -->
+                <div class="fq-item">
+                    <button class="faq-question" aria-expanded="false" role="button">
+                        <h3>How does the platform personalize my learning?</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Our AI-driven algorithms analyze your input, learning style, strengths, and areas for
+                            improvement to tailor a personalized learning plan. The system adapts as you progress,
+                            providing customized recommendations for resources and study strategies that work best for
+                            you.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="fq-item">
+                    <button class="faq-question" aria-expanded="false" role="button">
+                        <h3>Is gamification available for all tasks?</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! Every aspect of our platform incorporates gamification elements. You'll earn points,
+                            badges, and rewards for completing tasks, maintaining streaks, reaching milestones, and
+                            achieving your goals. Our leaderboards and achievement system help keep you motivated
+                            throughout your learning journey.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="fq-item">
+                    <button class="faq-question" aria-expanded="false" role="button">
+                        <h3>Can I access Vector Lab on multiple devices?</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Vector Lab is fully responsive and works seamlessly across desktop, tablet, and mobile
+                            devices. Your data syncs automatically, so you can start a study session on your laptop and
+                            continue on your phone without missing a beat.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="fq-item">
+                    <button class="faq-question" aria-expanded="false" role="button">
+                        <h3>How do I get started with Vector Lab?</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Getting started is easy! Simply sign up for a free trial, complete your learning profile, set
+                            your initial goals, and our system will generate your personalized learning plan. Our
+                            onboarding process guides you through each step to ensure you get the most out of the
+                            platform from day one.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="fq-item">
+                    <button class="faq-question" aria-expanded="false" role="button">
+                        <h3>Is there a mobile app available?</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, we offer native mobile apps for both iOS and Android devices. You can download them from
+                            the App Store or Google Play Store to access all features on the go, including offline study
+                            capabilities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <img src="images/Vector.png" alt="Vector Labs Logo" class="footer-logo">
+                    <p style="text-align: center;">Empowering students worldwide with smart learning solutions that
+                        transform education.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Features</h3>
+                    <ul>
+                        <li><a href="features.html#personalized">Personalized Learning</a></li>
+                        <li><a href="features.html#goals">Goal Achievement</a></li>
+                        <li><a href="features.html#management">Study Load Management</a></li>
+                        <li><a href="features.html#gamification">Gamification</a></li>
+                        <li><a href="features.html#collaboration">Collaborative Learning</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> support@vectorlab.in</p>
+                    <!-- <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p> -->
+                    <!-- <p><i class="fas fa-map-marker-alt"></i> 123 Education Ave, Learning City, LC 12345</p> -->
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Vector Lab. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const questions = document.querySelectorAll(".faq-question");
+
+            questions.forEach((question) => {
+                question.addEventListener("click", () => {
+                    const answer = question.nextElementSibling;
+                    const isOpen = question.getAttribute("aria-expanded") === "true";
+
+                    // Close all answers
+                    questions.forEach((q) => {
+                        q.setAttribute("aria-expanded", "false");
+                        q.nextElementSibling.classList.remove("open");
+                    });
+
+                    // Toggle current
+                    if (!isOpen) {
+                        question.setAttribute("aria-expanded", "true");
+                        answer.classList.add("open");
+                    }
+                });
+            });
+        });
+    </script>
+
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init("bu4VeMm1mA6ZYtaaz");
+  })();
+
+  function sendEmail(e) {
+    e.preventDefault();
+
+    emailjs.sendForm('service_jzcqdkd', 'template_s2q7okp', e.target)
+      .then(() => {
+        alert("Email sent successfully!");
+        e.target.reset();   
+      }, (error) => {
+        alert("Failed to send email: " + JSON.stringify(error));
+      });
+  }
+</script> -->
+
+
+
+
+</body>
+
+</html>
